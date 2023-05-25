@@ -8,6 +8,9 @@
     <title>@yield("title")</title>
 </head>
 <body>
+    <h2>
+        tu é show
+    </h2>
 @yield('section')
 </body>
 </html>

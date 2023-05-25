@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,21 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/login/{id?}', function($id = null){
- return view("test_view", ["message" => "O id infromado é {$id}"]);
-});
-
-Route::get('/test_view/{welcome?}', function($welcome = null){
-    if($welcome){
-        return view("test_view", ["message" => $welcome]);
-    }else{
-        $welcome = "You're not welcome here";
-        return view("test_view", ["message" => $welcome]);
-    }
-   });
+Route::get("/products", [ProdutosController::class, 'index']);
 
 
