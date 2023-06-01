@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get("/products", [ProdutosController::class, 'index'])->name('products');
+Route::get("/products", [ProductsController::class, 'index'])->name('products');
 
-Route::get("/produtos/add", [ProdutosController::class, 'add'])->name('products.products.add');
+Route::get("/produtos/add", [ProductsController::class, 'add'])->name('products.products.add');
 
-Route::post("/produtos/add", [ProdutosController::class, 'addSave'])->name('products.products.addSave');
+Route::post("/produtos/add", [ProductsController::class, 'addSave'])->name('products.products.addSave');
