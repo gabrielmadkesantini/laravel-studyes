@@ -17,13 +17,13 @@
     @csrf
     <fieldset>
         <legend>My form</legend>
-        <input type="email" name="name" placeholder="Email">
+        <input type="text" name="name" placeholder="Email" value="{{old('name')}}">
         <br>
-        <input type="password" name="pass" placeholder="Password">
+        <input type="password" name="pass" placeholder="Password" >
         <br>
-        <input type="number" name="price" placeholder="Price" step="2">
+        <input type="number" name="price" placeholder="Price" step="2" value="{{old('price')}}">
         <br>
-        <input type="number" name="quantity" placeholder="Quantity">
+        <input type="number" name="quantity" placeholder="Quantity" value="{{old('quantity')}}">
         <br>
         <button type='submit'>Submit</button>
     </fieldset>

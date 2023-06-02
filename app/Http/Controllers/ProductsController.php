@@ -17,8 +17,8 @@ return view("products.index", ['prods' => $prods]);
 return view('products.add');
     }
 
-    public function view(){
-
+    public function view(Products $product){
+return view('products.view', ['prod' => $product]);
     }
 
     public function addSave(Request $form){
@@ -32,6 +32,10 @@ return view('products.add');
 
      return redirect()->route('products');
 
+    }
+
+    public function edit($products){
+dd($products);
     }
 
 }

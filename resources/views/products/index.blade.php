@@ -4,22 +4,22 @@
 @section("title", "produtos")
 
 @section('content')
-<table border="1">
-    <thead>
-        <th>Nome</th>
-        <th>Quantidade</th>
-        <th>Preço</th>
-    </thead>
-    <tbody>
+    <div class='grid-cols-3 '>
+        <p>Nome</p>
+        <p>Quantidade</p>
+        <p>Preço</p>
+        <p>Editar</p>
+    </div>
+    <div class='grid-cols-3 gap-3'>
         @foreach($prods as $prod)
-        <tr>
-            <td>{{$prod['name']}}</td>
-            <td>R${{number_format($prod['quantity'], 2, ',', '.')}}</td>
-            <td>{{$prod['price']}}</td>
-        </tr>
+
+        <p><a href="{{route('products.products.view', $prod->id)}}">{{$prod['name']}}</a></p>
+        <p>R${{number_format($prod['quantity'], 2, ',', '.')}}</p>
+        <p>{{$prod['price']}}</p>
+        <p><a href="{{route('products.products.edit', $prod->id)}}">Editar</a></p>
+
         @endforeach
-    </tbody>
-</table>
+    </div class='grid-cols-3 gap-3'>
 
 <p>Mercado negro...</p>
 <a href="{{route('products.products.add')}}">Adicionar um produto</a>

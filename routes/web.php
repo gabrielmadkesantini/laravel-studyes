@@ -19,3 +19,7 @@ Route::get("/products", [ProductsController::class, 'index'])->name('products');
 Route::get("/produtos/add", [ProductsController::class, 'add'])->name('products.products.add');
 
 Route::post("/produtos/add", [ProductsController::class, 'addSave'])->name('products.products.addSave');
+
+Route::get("/products/{product}", [ProductsController::class, 'view']) -> name('products.products.view');
+
+Route::get("/products/edit/{product}", [ProductsController::class, 'edit']) -> name('products.products.edit');
