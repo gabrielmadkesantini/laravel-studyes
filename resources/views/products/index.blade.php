@@ -20,8 +20,9 @@
     <thead>
         <th>Nome</th>
         <th>Quantidade</th>
-        <th>threço</th>
+        <th>Preço</th>
         <th>Editar</th>
+        <th>Apagar</th>
     </thead>
     <tbody>
 
@@ -31,6 +32,7 @@
             <th>R${{number_format($prod['quantity'], 2, ',', '.')}}</th>
             <th>{{$prod['price']}}</th>
             <th><a href="{{route('products.products.edit', $prod->id)}}">Editar</a></th>
+            <th><a href="{{route('products.products.deleteproduct', $prod->id)}}">Apagar<a></th>
         </tr>
             @endforeach
 

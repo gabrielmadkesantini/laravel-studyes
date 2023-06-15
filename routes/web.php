@@ -27,3 +27,8 @@ Route::get("/products/{product}", [ProductsController::class, 'view']) -> name('
 Route::get("/products/edit/{products}", [ProductsController::class, 'edit']) -> name('products.products.edit');
 
 Route::post("/products/edit/{products}", [ProductsController::class, 'editedSave'])->name('products.products.editedSave');
+
+Route::get("/products/delete/{products}", [ProductsController::class, 'deleteProducts'])->name("products.products.deleteproduct");
+
+Route::post("/products/real/delete/{products}", [ProductsController::class, 'deleteProducts'])->name("products.products.deleteproductforeal");
+
