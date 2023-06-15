@@ -3,8 +3,11 @@
 @section('title', 'Visualizar produtos')
 
 @section('content')
-@foreach ($prods as $prods)
+@foreach ($prods as $prod)
 
 @endforeach
-<h2>{{$prod->name}}</h2>
+<p>{{$prods->name}}</p>
+<p>{{$prods->price}}</p>
+<p>{{$prods->quantity}}</p>
+
 @endsection

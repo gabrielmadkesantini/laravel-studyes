@@ -8,10 +8,16 @@
 
 </head>
 <body>
-    <h2 class="">
+    <h2 class="text-2">
         tu é show
     </h2>
     <hr>
+    <div>
+        <ul>
+            <li><a href="{{route('home')}}">Home</a></li>
+            <li><a href="{{route('products')}}">Produtos</a></li>
+        </ul>
+    </div>
 @yield('content')
 </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 
 class ProductsController extends Controller
@@ -18,24 +19,38 @@ return view('products.add');
     }
 
     public function view(Products $product){
-return view('products.view', ['prod' => $product]);
+return view('products.view', ['prods' => $product]);
     }
 
     public function addSave(Request $form){
         $dados = $form->validate([
             'name' => 'required|unique:products|min:3',
-            'price'=> 'required|min:0|numeric',
-            'quantity'=> 'required|integer|min:0',
+            'price'=> 'required|gte:0|numeric',
+            'quantity'=> 'required|integer|gte:0',
         ]);
 
      Products::create($dados);
 
-     return redirect()->route('products');
+     return redirect()->route('products')->whith('adicionado', "Adicionado com sucesso!!");
 
     }
 
-    public function edit($products){
-dd($products);
+    public function edit(Products $products){
+return view('products.edit', ['prod'=>$products]);
+    }
+
+    public function editedSave(Request $form, Products $products){
+  $data = $form->validate([
+    'name' => ['required',Rule::unique('products')->ignore($products->id),'min:3'],
+    'price'=> 'required|gte:0|numeric',
+    'quantity'=> 'required|integer|gte:0',
+]);
+
+$products->fill($data);
+$products->save();
+
+return redirect()->route('products')->with('sucesso', 'Produto inserido, só sucesso!!');
+
     }
 
 }

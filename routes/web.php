@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/', function(){
+    return view("welcome");
+})->name('home');
 
 Route::get("/products", [ProductsController::class, 'index'])->name('products');
 
@@ -22,4 +24,6 @@ Route::post("/produtos/add", [ProductsController::class, 'addSave'])->name('prod
 
 Route::get("/products/{product}", [ProductsController::class, 'view']) -> name('products.products.view');
 
-Route::get("/products/edit/{product}", [ProductsController::class, 'edit']) -> name('products.products.edit');
+Route::get("/products/edit/{products}", [ProductsController::class, 'edit']) -> name('products.products.edit');
+
+Route::post("/products/edit/{products}", [ProductsController::class, 'editedSave'])->name('products.products.editedSave');

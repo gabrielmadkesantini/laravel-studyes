@@ -4,24 +4,41 @@
 @section("title", "produtos")
 
 @section('content')
-    <div class='grid-cols-3 '>
-        <p>Nome</p>
-        <p>Quantidade</p>
-        <p>Preço</p>
-        <p>Editar</p>
-    </div>
-    <div class='grid-cols-3 gap-3'>
-        @foreach($prods as $prod)
+<h3>Mercado negro...</h3>
 
-        <p><a href="{{route('products.products.view', $prod->id)}}">{{$prod['name']}}</a></p>
-        <p>R${{number_format($prod['quantity'], 2, ',', '.')}}</p>
-        <p>{{$prod['price']}}</p>
-        <p><a href="{{route('products.products.edit', $prod->id)}}">Editar</a></p>
+@if(session('sucesso'))
+<div style="backgorund-color: rgb(182, 182, 182)"; color:greenYellow>
+    <marquee style="height: 250px" direction="up" loop='1'>
 
-        @endforeach
-    </div class='grid-cols-3 gap-3'>
+    {{session('sucesso')}}
 
-<p>Mercado negro...</p>
+    </marquee>
+</div>
+@endif
+
+<table border="1">
+    <thead>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>threço</th>
+        <th>Editar</th>
+    </thead>
+    <tbody>
+
+            @foreach($prods as $prod)
+            <tr>
+            <th><a href="{{route('products.products.view', $prod->id)}}">{{$prod['name']}}</a></th>
+            <th>R${{number_format($prod['quantity'], 2, ',', '.')}}</th>
+            <th>{{$prod['price']}}</th>
+            <th><a href="{{route('products.products.edit', $prod->id)}}">Editar</a></th>
+        </tr>
+            @endforeach
+
+    </tbody>
+</table>
+
+
+
 <a href="{{route('products.products.add')}}">Adicionar um produto</a>
 
 
