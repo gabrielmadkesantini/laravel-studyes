@@ -31,7 +31,7 @@ return view('products.view', ['prods' => $product]);
 
      Products::create($dados);
 
-     return redirect()->route('products')->whith('adicionado', "Adicionado com sucesso!!");
+     return redirect()->route('products')->with('adicionado', "Adicionado com sucesso!!");
 
     }
 
@@ -55,7 +55,7 @@ return redirect()->route('products')->with('sucesso', 'Produto inserido, só suc
 
     public function deleteProducts(Products $products){
         if(request()->isMethod('GET')){
-            view("products_delete_alert.view", ["prod" => $products]);
+            return view("products.products_delete_alert", ["prod" => $products]);
         }else{
             $products->delete();
             return redirect()->route('products')->with('sucesso', 'Produto apagado com sucesso');

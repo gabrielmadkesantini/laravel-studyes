@@ -22,7 +22,7 @@
         <br>
         <input type="password" name="pass" placeholder="Password" >
         <br>
-        <input type="number" name="price" placeholder="Price" step="2" value="{{old('price', $prod->price ?? '')}}">
+        <input type="number" name="price" placeholder="Price" value="{{old('price', $prod->price ?? '')}}">
         <br>
         <input type="number" name="quantity" placeholder="Quantity" value="{{old('quantity', $prod->quantity ?? '')}}">
         <br>

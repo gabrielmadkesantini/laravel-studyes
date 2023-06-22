@@ -16,6 +16,12 @@
 </div>
 @endif
 
+<form action="">
+    @csrf
+    <input type="text" name="busca">
+    <input type="submit" value="Buscar">
+</form>
+
 <table border="1">
     <thead>
         <th>Nome</th>
