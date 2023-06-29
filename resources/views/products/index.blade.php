@@ -7,13 +7,9 @@
 <h3>Mercado negro...</h3>
 
 @if(session('sucesso'))
-<div style="backgorund-color: rgb(182, 182, 182)"; color:greenYellow>
-    <marquee style="height: 250px" direction="up" loop='1'>
-
-    {{session('sucesso')}}
-
+    <marquee style="height: 100vh, width: 100vw" direction="up" loop='10' scrolldelay="80">
+    <img src="{{session('sucesso')}}" alt="">
     </marquee>
-</div>
 @endif
 
 <form action="">

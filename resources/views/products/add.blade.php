@@ -17,9 +17,7 @@
     @csrf
     <fieldset>
         <legend>My form</legend>
-        <input type="text" name="name" placeholder="Email" value="{{old('name')}}">
-        <br>
-        <input type="password" name="pass" placeholder="Password" >
+        <input type="text" name="name" placeholder="Produto" value="{{old('name')}}">
         <br>
         <input type="number" name="price" placeholder="Price" value="{{old('price')}}">
         <br>

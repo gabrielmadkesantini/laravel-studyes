@@ -31,7 +31,7 @@ return view('products.view', ['prods' => $product]);
 
      Products::create($dados);
 
-     return redirect()->route('products')->with('adicionado', "Adicionado com sucesso!!");
+     return redirect()->route('products')->with('sucesso', "Adicionado com sucesso!!");
 
     }
 
@@ -49,11 +49,12 @@ return view('products.edit', ['prod'=>$products]);
 $products->fill($data);
 $products->save();
 
-return redirect()->route('products')->with('sucesso', 'Produto inserido, só sucesso!!');
+return redirect()->route('products')->with('sucesso', 'https://i.ytimg.com/vi/dlZWPyGUv5A/hqdefault.jpg');
 
     }
 
     public function deleteProducts(Products $products){
+
         if(request()->isMethod('GET')){
             return view("products.products_delete_alert", ["prod" => $products]);
         }else{
